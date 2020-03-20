@@ -29,14 +29,14 @@ namespace Valadate.Tests {
 		[Test (xtodo="this is a builddir!=srcdir problem", name="test loading pie binary")]
 		public void load_pie () {
 			var modname = Environment.get_variable("G_TEST_BUILDDIR") + "/.libs/" + TESTEXE;
-			var mod = GLib.Module.open (modname, ModuleFlags.BIND_LOCAL);
+			var mod = GLib.Module.open (modname, ModuleFlags.LOCAL);
 			assert (mod != null);
 		}
 		
 		[Test (name="test if the binary has a test method")]
 		public void has_test_method() {
 			var modname = Environment.get_variable("G_TEST_BUILDDIR") + "/.libs/" + TESTEXE;
-			var mod = GLib.Module.open (modname, ModuleFlags.BIND_LOCAL);
+			var mod = GLib.Module.open (modname, ModuleFlags.LOCAL);
 			void* function;
 			assert(mod.symbol ("valadate_tests_test_pie_test_pie_fail", out function));
 			assert(function != null);

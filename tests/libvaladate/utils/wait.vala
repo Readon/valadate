@@ -122,26 +122,26 @@ namespace Valadate.Utils.Tests {
             assert(changer.count == 2);
         }
 
-        public void test_wait_async_normal() {
+        public void test_wait_async_normal() throws Error {
             assert(wait_for_async(200, (cb) => changer.inc_async.begin(cb),
                         res => changer.inc_async.end(res)));
             assert(changer.count == 1);
         }
 
-        public void todo_test_wait_async_fail() {
+        public void todo_test_wait_async_fail() throws Error {
             assert(!wait_for_async(20, (cb) => changer.inc_async.begin(cb),
                         res => changer.inc_async.end(res)));
             assert(changer.count == 0);
         }
 
-        public void test_wait_cancellable_async_normal() {
+        public void test_wait_cancellable_async_normal() throws Error {
             assert(wait_for_cancellable_async(200,
                         (c, cb) => changer.cancellable_inc_async.begin(c, cb),
                         res => changer.cancellable_inc_async.end(res)));
             assert(changer.count == 1);
         }
 
-        public void _test_wait_cancellable_async_fail() {
+        public void _test_wait_cancellable_async_fail() throws Error {
             assert(!wait_for_cancellable_async(20,
                         (c, cb) => changer.cancellable_inc_async.begin(c, cb),
                         res => changer.cancellable_inc_async.end(res)));
