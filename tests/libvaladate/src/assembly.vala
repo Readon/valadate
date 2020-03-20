@@ -1,6 +1,6 @@
 namespace Valadate.Tests {
 
-	public static void new_assembly() {
+	public static void new_assembly() throws Error {
 		
 		var assembly = new ConcreteAssembly(testbinary);
 		
@@ -28,7 +28,7 @@ namespace Valadate.Tests {
 		}
 	}
 
-	public static void run_assembly() {
+	public static void run_assembly() throws Error {
 		
 		var builddir = Environment.get_variable("G_TEST_BUILDDIR");
 		
@@ -56,7 +56,7 @@ namespace Valadate.Tests {
 		GLib.Test.trap_assert_failed();
 	}
 
-	public static void run_fail_subprocess() {
+	public static void run_fail_subprocess() throws Error, IOError {
 		var builddir = Environment.get_variable("G_TEST_BUILDDIR");
 		var binary = File.new_for_path(Path.build_filename(
 			builddir, "..", "data", "helloworld"));

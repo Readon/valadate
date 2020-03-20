@@ -10,7 +10,7 @@ namespace Valadate.Tests {
 			factory = new ObjectFactory();
 		}
 	
-		public virtual void test_get_yak() {
+		public virtual void test_get_yak() throws FactoryError {
 			
 			var yak = factory.get_object("yak");
 			
@@ -18,7 +18,7 @@ namespace Valadate.Tests {
 			assert(yak.name == "yak");
 		}
 	
-		public virtual void test_get_dog() {
+		public virtual void test_get_dog() throws FactoryError {
 			
 			var dog = factory.get_object("dog");
 			
@@ -26,7 +26,7 @@ namespace Valadate.Tests {
 			assert(dog.name == "dog");
 		}
 
-		public virtual void test_get_chicken() {
+		public virtual void test_get_chicken() throws FactoryError {
 			
 			var chicken = factory.get_object("chicken");
 			
@@ -34,7 +34,7 @@ namespace Valadate.Tests {
 			assert(chicken.name == "chicken");
 		}
 	
-		public virtual void test_get_goat() {
+		public virtual void test_get_goat() throws FactoryError {
 			
 			var goat = factory.get_object("goat");
 			
@@ -42,7 +42,7 @@ namespace Valadate.Tests {
 			assert(goat.name == "goat");
 		}
 	
-		public virtual void test_get_duck() {
+		public virtual void test_get_duck() throws FactoryError {
 			
 			var duck = factory.get_object("duck");
 			
@@ -50,7 +50,7 @@ namespace Valadate.Tests {
 			assert(duck.name == "duck");
 		}
 
-		public virtual void test_get_mystery_animal() {
+		public virtual void test_get_mystery_animal() throws FactoryError {
 			
 			var mystery = factory.get_object(mysteryanimal);
 			
@@ -58,7 +58,7 @@ namespace Valadate.Tests {
 			assert(mystery.name == mysteryanimal);
 		}
 	
-		public virtual void test_get_crocodile() {
+		public virtual void test_get_crocodile() throws FactoryError {
 			
 			try {
 				var crocodile = factory.get_object("crocodile");

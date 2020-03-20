@@ -24,9 +24,10 @@ libvaladate = shared_library('libvaladate', lib_sources,
                                 install: true)
 valadate_dep = declare_dependency(dependencies:depends, link_with: libvaladate, include_directories : inc_dir)
 
-libvaladate_cli = shared_library('libvaladate_cli', cli_sources, 
+cli = static_library('libvaladate_cli', cli_sources, 
 			                    include_directories : inc_dir,
                                 dependencies: depends+[valadate_dep],
                                 install: true)
+cli_dep = declare_dependency(dependencies: depends+[valadate_dep], link_with: cli)
 
 subdir('drivers')

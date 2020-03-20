@@ -1,6 +1,6 @@
 namespace Valadate.Tests {
 
-	public static void new_test_result() {
+	public static void new_test_result() throws Error, OptionError {
 		var options = new TestOptions({ testbinary.get_path() });
 		var conf = new TestConfig(options);
 		var res = new TestResult(conf);
@@ -8,7 +8,7 @@ namespace Valadate.Tests {
 		assert(res is TestResult);
 	}
 
-	public static void test_result_add_test() {
+	public static void test_result_add_test() throws Error, OptionError {
 		var options = new TestOptions({ testbinary.get_path() });
 		var conf = new TestConfig(options);
 		var res = new TestResult(conf);
@@ -32,7 +32,7 @@ G_LOG_LEVEL_INFO: test.vala:43: This is just info
 </failure>
 This is a stderr message""";
 
-	public static void test_result_process_buffers() {
+	public static void test_result_process_buffers() throws Error, OptionError {
 		var options = new TestOptions({ testbinary.get_path() });
 		var conf = new TestConfig(options);
 		var res = new TestResult(conf);

@@ -11,11 +11,12 @@ namespace Valadate {
 			base(File.new_for_path(gdb));
 		}
 		
-		public override Assembly clone() {
+		public override Assembly clone() throws Error {
 			return new Gdb();
 		}
 		
-		public override Assembly run(string? cmd = null, Cancellable? cancellable = null) {
+		public override Assembly run(string? cmd = null, Cancellable? cancellable = null) 
+			throws Error {
 			return base.run(" --mode=execute gdb " + cmd ?? "", cancellable);
 		}
 		
@@ -24,7 +25,7 @@ namespace Valadate {
 
 	public class GdbTestCase : TestCase {
 
-		public void test_run_all_tests() {
+		public void test_run_all_tests() throws Error {
 
 			var gdb = new Gdb();
 			var builddir = Environment.get_variable("G_TEST_BUILDDIR");

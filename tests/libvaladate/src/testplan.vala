@@ -1,6 +1,6 @@
 namespace Valadate.Tests {
 
-	public static void new_test_plan() {
+	public static void new_test_plan() throws Error {
 		
 		var assembly = new TestAssembly({ testbinary.get_path() });
 		

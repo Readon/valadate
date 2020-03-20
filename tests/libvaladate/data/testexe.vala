@@ -35,8 +35,8 @@ namespace Valadate.Tests {
 			stderr.puts("Test of stderr");
 			assert(true);
 			
-			void* bum = null;
-			Test test = (Test)bum;
+			//void* bum = null;
+			//Test test = (Test)bum;
 			//int i = test.count;
 			
 		}

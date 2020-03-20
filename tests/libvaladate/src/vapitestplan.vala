@@ -1,6 +1,6 @@
 namespace Valadate.Tests {
 
-	public static void new_vapi_test_plan() {
+	public static void new_vapi_test_plan() throws Error {
 		
 		var assembly = new TestAssembly({ testbinary.get_path() });
 		var plan_file = 
@@ -12,7 +12,7 @@ namespace Valadate.Tests {
 		assert(tplan is VapiTestPlan);
 	}
 
-	public static void vapi_test_plan_no_of_testsuites() {
+	public static void vapi_test_plan_no_of_testsuites() throws Error {
 		
 		var assembly = new TestAssembly({ testbinary.get_path() });
 		var plan_file = 
@@ -24,7 +24,7 @@ namespace Valadate.Tests {
 		assert(tplan.root[0][0].size == 4);
 	}
 
-	public static void vapi_test_plan_no_of_tests() {
+	public static void vapi_test_plan_no_of_tests() throws Error {
 		
 		var assembly = new TestAssembly({ testbinary.get_path() });
 		var plan_file = 
@@ -36,7 +36,7 @@ namespace Valadate.Tests {
 		assert(tplan.root[0][0][0].count == 6);
 	}
 
-	public static void vapi_test_plan_tests_abstract() {
+	public static void vapi_test_plan_tests_abstract() throws Error {
 		
 		var assembly = new TestAssembly({ testbinary.get_path() });
 		var plan_file = 
@@ -48,7 +48,7 @@ namespace Valadate.Tests {
 		assert(tplan.root[0][0][1].count == 4);
 	}
 
-	public static void vapi_test_plan_no_of_inherited_tests() {
+	public static void vapi_test_plan_no_of_inherited_tests() throws Error {
 		
 		var assembly = new TestAssembly({ testbinary.get_path() });
 		var plan_file = 
@@ -60,7 +60,7 @@ namespace Valadate.Tests {
 		assert(tplan.root[0][0][2].count == 7);
 	}
 
-	public static void vapi_test_plan_tests_with_label() {
+	public static void vapi_test_plan_tests_with_label() throws Error {
 
 		var assembly = new TestAssembly({ testbinary.get_path() });
 		var plan_file = 
@@ -74,7 +74,7 @@ namespace Valadate.Tests {
 		assert(tplan.root[0][0][3][2].label == "/Valadate/Tests/TestExeTwo/Test Two");
 	}
 
-	public static void vapi_test_plan_run_single_test() {
+	public static void vapi_test_plan_run_single_test() throws Error {
 		
 		var testpath = "/Valadate/Tests/TestExe/test_simple";
 		var assembly = new TestAssembly({ testbinary.get_path(), "-r", testpath });

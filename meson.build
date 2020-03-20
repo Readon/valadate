@@ -24,10 +24,12 @@ conf_data = configuration_data()
 conf_data.set('VERSION', '2.0.0')
 driver_dir = join_paths(meson.build_root(), 'libvaladate', 'drivers')
 conf_data.set('VALADATE_DRIVER_DIR', '"@0@"'.format(driver_dir))
+lib_dir = join_paths(meson.build_root(), 'libvaladate')
+conf_data.set('VALADATE_LIB_DIR', '"@0@"'.format(lib_dir))
 configure_file(output : 'config.h',
                configuration : conf_data)
 
 conf_inc_dir = [include_directories('.')]
 
 subdir('libvaladate')
-#subdir('tests')
+subdir('tests')

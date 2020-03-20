@@ -6,7 +6,7 @@ namespace Valadate.Tests {
 			mysteryanimal = "duck";
 		}
 
-		public override void test_get_dog() {
+		public override void test_get_dog() throws FactoryError {
 			
 			var dog = factory.get_object("dog");
 			

@@ -3,7 +3,7 @@ namespace Valadate.Tests {
 	public const string MESSAGE_XML = "<%s message=\"%s\" type=\"%s\">%s</%s>\n";
 	public const string SYSTEM_ERR_TAG = "system-err";
 
-	public static void test_report_new() {
+	public static void test_report_new() throws Error {
 		
 		var test = new MockTestCase();
 
@@ -12,7 +12,7 @@ namespace Valadate.Tests {
 		assert(report.xml is XmlFile);
 	}
 
-	public static void test_report_new_is_testcase() {
+	public static void test_report_new_is_testcase() throws Error {
 		
 		var test = new MockTestCase();
 		var report = new TestReport(test, false);
@@ -22,12 +22,12 @@ namespace Valadate.Tests {
 		assert(root->name == "testsuite");
 	}
 
-	public static void test_report_add_text() {
+	public static void test_report_add_text() throws Error {
 		
 		var test = new MockTestCase();
 		var report = new TestReport(test, false);
 		var mess = "testcase:43 this is a new message";
-		var str = MESSAGE_XML.printf(SYSTEM_ERR_TAG, mess, "INFO", mess, SYSTEM_ERR_TAG);
+		//var str = MESSAGE_XML.printf(SYSTEM_ERR_TAG, mess, "INFO", mess, SYSTEM_ERR_TAG);
 
 		report.add_text(mess, SYSTEM_ERR_TAG);
 
