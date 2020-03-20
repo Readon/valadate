@@ -51,6 +51,10 @@ namespace Valadate {
 		public new Test get(int index) {
 			return this;
 		}
+		
+		public void set(int index, Test test){
+			return;
+		}
 
 		public TestAdapter(string name, int timeout) {
 			this.name = name;

@@ -39,7 +39,7 @@ namespace Valadate {
 		
 		public TestConfig config {get; set;}
 		
-		public TestReportPrinter(TestConfig config) throws Error {
+		protected TestReportPrinter(TestConfig config) throws Error {
 			this.config = config;
 		}
 	
