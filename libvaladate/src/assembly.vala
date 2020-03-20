@@ -54,7 +54,7 @@ namespace Valadate {
 
 		protected Subprocess process;
 
-		public Assembly(File binary) throws Error {
+		protected Assembly(File binary) throws Error {
 			init_launcher();
 			if(!binary.query_exists())
 				throw new FileError.NOENT("The file %s does not exist", binary.get_path());
