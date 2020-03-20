@@ -29,7 +29,7 @@ namespace Valadate {
 
 		public TestOptions options {get;set;}
 		
-		private string[] dependencies = {};
+		//private string[] dependencies = {};
 		
 		private delegate void GtkInit([CCode (array_length_pos = 0.9)] ref unowned string[]? argv);
 		
@@ -51,7 +51,7 @@ namespace Valadate {
 			options = other.options;
 		}
 		
-		private void list_deps() throws Error {
+		/*private void list_deps() throws Error {
 			var objdump = new SystemProgram("objdump");
 			var grep = new SystemProgram("grep");
 			var awk = new SystemProgram("awk");
@@ -77,13 +77,13 @@ namespace Valadate {
 				}
 			}
 			GLib.stdout.printf("%s\n", GLib.Module.build_path(null, "gtk-3"));
-			Module module = Module.open ("libgtk-3.so.0", ModuleFlags.BIND_LAZY);
+			Module module = Module.open ("libgtk-3.so.0", ModuleFlags.LAZY);
 			void* init;
 			assert(module != null);
 			assert(module.symbol("gtk_init", out init));
 			assert(init != null);
 			//GLib.stdout.printf("# %s\n", string.joinv(":", dependencies));
-		}
+		}*/
 		
 		private void setup_dirs() throws Error {
 			var buildstr = Environment.get_variable("G_TEST_BUILDDIR");

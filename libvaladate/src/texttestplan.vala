@@ -33,15 +33,10 @@ namespace Valadate {
 		public File plan {get;construct set;}
 
 		private TestSuite testsuite;
-		private TestCase testcase;
-		private string currpath;
 		
 		private string[] content;
 		private Type runner_type = typeof(AsyncTestRunner);
 		private Type config_type = typeof(TestConfig);
-		
-		private HashTable<string, Type> typemap =
-			new HashTable<string, Type>(str_hash, str_equal);
 		
 		construct {
 			try {

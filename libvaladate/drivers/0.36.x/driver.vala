@@ -364,7 +364,6 @@ namespace Valadate.Drivers {
 					return "%s%s_%s".printf (get_ccode_lower_case_prefix (m.parent_symbol), infix, m.name);
 				}
 			} else if (sym is Vala.Method) {
-				var m = (Vala.Method) sym;
 				if (sym.name.has_prefix ("_")) {
 					return "_%s%s".printf (get_ccode_lower_case_prefix (sym.parent_symbol), sym.name.substring (1));
 				} else {

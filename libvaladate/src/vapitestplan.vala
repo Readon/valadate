@@ -33,8 +33,6 @@ namespace Valadate {
 		public File plan {get;construct set;}
 
 		private TestSuite testsuite;
-		private TestCase testcase;
-		private string currpath;
 		
 		private VapiDriver driver; 
 

@@ -24,8 +24,6 @@
 namespace Valadate {
 
 	public class PluginModule : TypeModule {
-		
-		private static string search_path;
 
 		public static void load_all() {
 			
@@ -45,7 +43,7 @@ namespace Valadate {
 		
 		public override bool load () {
 			string path = GLib.Module.build_path (null, name);
-			module = GLib.Module.open (path, GLib.ModuleFlags.BIND_LAZY);
+			module = GLib.Module.open (path, GLib.ModuleFlags.LAZY);
 			if (null == module) {
 				error ("Module not found");
 			}

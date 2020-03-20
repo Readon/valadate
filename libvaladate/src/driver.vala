@@ -27,7 +27,8 @@ namespace Valadate {
 		[CCode (has_target = false)]
 		private delegate VapiDriver DriverConstructor();
 		
-		public static VapiDriver @new(string version) {
+		public static VapiDriver @new(string version)
+			throws Error, AssemblyError {
 			
 			var driverfile = File.new_for_path(
 				Path.build_filename(

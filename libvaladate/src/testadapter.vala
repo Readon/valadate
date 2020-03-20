@@ -52,7 +52,7 @@ namespace Valadate {
 			return this;
 		}
 		
-		public void set(int index, Test test){
+		public new void set(int index, Test test){
 			return;
 		}
 
@@ -89,6 +89,7 @@ namespace Valadate {
 					throw new IOError.TIMED_OUT(
 						"The test timed out after %d milliseconds",timeout);
 				async_finish(p, result);
+				thread.join();
 			};
 		}
 

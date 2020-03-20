@@ -32,7 +32,7 @@ namespace Valadate {
 		}
 
 		private void load_module() throws AssemblyError {
-			module = GLib.Module.open (binary.get_path(), ModuleFlags.BIND_LAZY);
+			module = GLib.Module.open (binary.get_path(), ModuleFlags.LAZY);
 			if (module == null)
 				throw new AssemblyError.LOAD(GLib.Module.error());
 			module.make_resident();

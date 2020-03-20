@@ -31,7 +31,8 @@ namespace Valadate {
 			this.name = name;
 		}
 
-		public override Assembly clone() {
+		public override Assembly clone() 
+			throws Error{
 			return new SystemProgram(name);
 		}
 
@@ -39,11 +40,12 @@ namespace Valadate {
 		// otherwise it will throw an error
 		public virtual SystemProgram pipe(
 			string? command = null,
-			SystemProgram program,
+			SystemProgram? program = null,
 			Cancellable? cancellable = null)
 			throws Error {
-
-			program.stdin.splice(stdout, OutputStreamSpliceFlags.CLOSE_TARGET);
+			
+			if(program != null)
+				program.stdin.splice(stdout, OutputStreamSpliceFlags.CLOSE_TARGET);
 			return this;
 		}
 
